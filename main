@@ -68,6 +68,8 @@ Value of output variable pet-name?
 
 terraform output pet-name
 
+In terraform, if you use the count meta argument, elements are created as a list. This is because lists can be accessed using indexes, and count creates a fixed number of elements.
+
 
 
 
