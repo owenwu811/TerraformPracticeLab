@@ -85,6 +85,10 @@ What is the default region that has been configured for use with the AWS CLI?
 
 cat /root/.aws/config | a more intuitive way would be "aws configure get region" command.
 
+What is the access key id used in the configuration?
+
+aws configure get aws_access_key_id
+
 
 
 
