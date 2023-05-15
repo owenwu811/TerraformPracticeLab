@@ -15,7 +15,7 @@ resource "tls_private_key" "pvtkey" {
   rsa_bits = 4096
 }
 
-resource "local_file" "key_details" {
+resource "local_file" "key_details" {cr
   content = tls_private_key.pvtkey.private_key_pem
   filename = "/root/key.txt"
  }
@@ -51,6 +51,26 @@ To find the private ip for an address, run terraform show. an argument value is 
 Terraform apply will show all the output values automatically without running terraform output.
 
 reference expressions must have ${} if used with subsitution, similar to python formatted strings.
+
+Create before destroy meta argument needs to be wrapped in a lifecycle block:
+
+resource "random_string" "string" {
+  length = var.length
+  keepers = { length = var.length }
+  lifecycle {
+    create_before_destroy = true
+   }
+}
+
+set(string) is a valid datatype in Terraform
+
+Value of output variable pet-name?
+
+terraform output pet-name
+
+
+
+
 
 
 
