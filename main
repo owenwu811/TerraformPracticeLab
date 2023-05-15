@@ -89,6 +89,16 @@ What is the access key id used in the configuration?
 
 aws configure get aws_access_key_id
 
+Now that we have a few users created, let's grant them privileges.
+Let's start with mary, grant her full administrator access by making use of the policy called AdministratorAccess.
+Make use of the subcommand attach-user-policy.
+The ARN of the AdministratorAccess policy is arn:aws:iam::aws:policy/AdministratorAccess.
+
+aws iam attach-user-policy --user-name mary --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --endpoint http://aws:4566 (do not forget the endpoint)
+
+
+
+
 
 
 
