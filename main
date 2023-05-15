@@ -100,7 +100,7 @@ jack and jill are developers and are part of a project called project-sapphire.
 Create a new IAM Group called project-sapphire-developers.
 Use the subcommand create-group to create the group.
 
-aws iam create-group --group-name project-sapphire-developers --endpoint http://aws:4566 
+aws iam create-group --group-name project-sapphire-developers --endpoint http://aws:4566 (Use aws iam help to find subcommands, and then read the synposis)
 
 
 
