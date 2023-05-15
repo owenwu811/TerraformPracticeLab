@@ -96,7 +96,11 @@ The ARN of the AdministratorAccess policy is arn:aws:iam::aws:policy/Administrat
 
 aws iam attach-user-policy --user-name mary --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --endpoint http://aws:4566 (do not forget the endpoint)
 
+jack and jill are developers and are part of a project called project-sapphire.
+Create a new IAM Group called project-sapphire-developers.
+Use the subcommand create-group to create the group.
 
+aws iam create-group --group-name project-sapphire-developers --endpoint http://aws:4566 
 
 
 
