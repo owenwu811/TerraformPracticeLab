@@ -1,0 +1,53 @@
+Fequently missed Q's / unsure questions - 
+5/15/2023
+which directory are terraform plugins located?
+.terraform/plugins
+
+To find the ID attribute for a resource, run terraform show without arguments as terraform show shows all the details of each resource
+
+Use a private key created in this resource in another resource of type local_file. Update key.tf with the requirements: resource name: key_details filename: /root/key.txt content: 
+use a reference expression to use the attribute called private_key_pem of the pvtkey resource. 
+
+Solution:
+
+resource "tls_private_key" "pvtkey" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+
+resource "local_file" "key_details" {
+  content = tls_private_key.pvtkey.private_key_pem
+  filename = "/root/key.txt"
+ }
+
+Now, let's update this resource and add variables instead. Use the default value declared in the variable called jedi. the variable is a map. For argument called content, use the value of the key by the same name. and, similarly, for the argument called filename, use the value by the same name.
+
+Solution:
+resource "local_file" "jedi" {
+  filename = var.jedi["filename"]
+  content = var.jedi["content"]
+ }
+ 
+Resource A has a dependence on resource B but dosen’t access any of its attributes inside of its arguments:
+
+Explicit dependency
+
+Explanation:
+
+Dosen’t access means that depends_on was used because you still know that there is a dependency, but it's just not accsessed inside of A's arguments, so it has to be explicity stated with a depends_on metaargument. 
+
+-var takes the highest precedence in terraform variable definition precedence while enviornment variables take the lowest precedence.
+
+
+The time static resource does not take any arguments to work. This is because it is used to generate a static timestamp that can be used as a value in other parts of the terraform configuration.
+Time static resource does not create or manage any infrastructure resources.
+
+Where is the terraform state file stored by default:
+
+Inside of the configuration directory
+
+To find the private ip for an address, run terraform show. an argument value is not necessary.
+
+Terraform apply will show all the output values automatically without running terraform output.
+
+
