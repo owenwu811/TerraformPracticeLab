@@ -72,6 +72,12 @@ In terraform, if you use the count meta argument, elements are created as a list
 
 == is not a valid version constraint operator
 
+What is the AWS command used to list all users?
+
+aws iam list-users
+
+
+
 
 
 
