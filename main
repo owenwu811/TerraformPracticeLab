@@ -76,6 +76,10 @@ What is the AWS command used to list all users?
 
 aws --endpoint http://aws:4566 iam list-users
 
+Create a user named mary?
+
+aws --endpoint http://aws:4566 iam create-user --user-name mary
+
 
 
 
