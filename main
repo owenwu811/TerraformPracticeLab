@@ -81,6 +81,10 @@ Create a user named mary?
 aws --endpoint http://aws:4566 iam create-user --user-name mary
 
 
+What is the default region that has been configured for use with the AWS CLI?
+
+cat /root/.aws/config 
+
 
 
 
