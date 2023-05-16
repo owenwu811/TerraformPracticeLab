@@ -129,4 +129,7 @@ Attach the AmazonEC2FullAccess policy with the ARN: arn:aws:iam::aws:policy/Amaz
 aws iam attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --endpoint http://aws:4566
 
 
+what does this error message mean: 
+configuring Terraform AWS Provider: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, failed to resolve service endpoint, an AWS region is required, but was not found
 
+Solution: the region is not set (aws region was required but not found)
