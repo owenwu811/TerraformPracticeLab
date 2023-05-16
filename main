@@ -145,3 +145,13 @@ provider "aws" {
 }
 
 --endpoint http://aws:4566 needs to be specified if we want to use a non default endpoint for that region
+
+Now, update the iam-user.tf to make use of the count meta-argument to loop through the project-sapphire-users variable and create all the users in the list.
+You may want to make use of the length function to get the length of the list.
+
+resource "aws_iam_user" "users" {
+     name = var.project-sapphire-users[count.index]
+     count = length(var.project-sapphire-users)
+}
+
+
