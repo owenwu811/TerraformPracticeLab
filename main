@@ -143,3 +143,5 @@ solution: (provider needs a name)
 provider "aws" {
   region = "ca-central-1"
 }
+
+--endpoint http://aws:4566 needs to be specified if we want to use a non default endpoint for that region
