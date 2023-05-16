@@ -154,4 +154,38 @@ resource "aws_iam_user" "users" {
      count = length(var.project-sapphire-users)
 }
 
+- if terraform show displays resource blocks, then that means a resource has alrady been provisioned within the control of Terraform
+- Bucket domain name is the same as DNS name for S3 Bucket
+
+The main.tf file is empty. Use it to create a new S3 with the following specifications:
+resource name: dc_bucket
+bucket name: dc_is_better_than_marvel
+Once the resource block is complete, run a terraform init, plan and apply to try and create the bucket.
+If unsure, refer to the documentation. The documentation tab is available at the top right panel. 
+
+Solution: (note that S3 bucket names in AWS must be unique. Also, this bucket name is not valid because it does not conform to DNS standards as it has underscores, so change it to dashes instead)
+
+resource "aws_s3_bucket" "marvel-cinematic-universe" {
+  bucket = "mcu-202011121359"
+
+}
+resource "aws_s3_bucket" "dc_bucket" {
+        bucket = "dc-is-better-than-marvel"
+}
+Let's do that now and upload this image to the s3 bucket! Update the main.tf file with the following specifications:
+Bucket: pixar-studios-2020
+Key: woody.jpg
+Source: /root/woody.jpg
+Once ready, proceed to run terraform init, plan and apply.
+
+(use aws_s3_bucket_object resource instead of aws_s3_bucket since it does not support key and source arguments per documentation. Note that s3 bucket name is an argument while resource name is not; they are different.)
+
+Solution: (The resource name can be anything, but Bucket: is an argument value, not the resource name)
+
+resource "aws_s3_bucket_object" "mine" {
+        key = "woody.jpg"
+        bucket = "pixar-studios-2020"
+        source = "/root/woody.jpg"
+}
+
 
