@@ -104,10 +104,29 @@ aws iam create-group --group-name project-sapphire-developers --endpoint http://
 
 
 
+Add the IAM users called jack and jill, who are developers to the new IAM Group called project-sapphire-developers.
+Use the subcommand add-user-to-group to add users into the group.
+
+1. aws iam add-user-to-group help
+2. read synposis + copy it somewhere
+ Solution: aws iam add-user-to-group --group-name project-sapphire-developers --user-name jack  --endpoint http://aws:4566 
+ 
+ aws iam add-user-to-group --group-name project-sapphire-developers --user-name jill  --endpoint http://aws:4566 
+ 
+ 
+What privileges are granted for jack and jill who are part of the group project-sapphire-developers?
+
+Check for their permissions individually and the ones granted to the group.
+
+aws iam list-attached-group-policies --group-name project-sapphire-developers --endpoint http://aws:4566 (use aws iam help to find the list-attached-group-policies subcommand)
+
+aws iam list-user-policies --user-name jill --endpoint http://aws:4566  (change the name to jack to see permissions jack has. Again, aws iam help to find list-user-policies subcommand, and then aws iam list-user-policies help to find the synposis to get required arguments)
 
 
+Both jack and jill need complete access to the EC2 service.
+Attach the AmazonEC2FullAccess policy with the ARN: arn:aws:iam::aws:policy/AmazonEC2FullAccess to the group project-sapphire-developers.
 
-
+aws iam attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --endpoint http://aws:4566
 
 
 
