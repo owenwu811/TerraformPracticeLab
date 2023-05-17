@@ -274,6 +274,8 @@ Question 4: We no longer wish to manage the file located at /root/anime/hall-of-
 
 Answer: terraform state rm local_file.hall_of_fame
 
+Explanation: Terraform State List reveals that this hall_of_fame resource is of type local_file, so terraform state rm syntax is as follows: terraform state rm type.name
+
 
 Terraform init is a command that can be run as many times as you want without any adverse effects.
 
