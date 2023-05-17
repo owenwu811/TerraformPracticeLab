@@ -1,5 +1,8 @@
 Fequently missed Q's / unsure questions - 
 5/15/2023
+
+For me, it's easy to think of a resource in Terraform like an object in any oop language such as Python, that is, an object representing any infrastructure object, like a vm or a database, for example.
+
 which directory are terraform plugins located?
 .terraform/plugins
 
