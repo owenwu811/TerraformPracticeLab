@@ -258,6 +258,20 @@ resource "aws_dynamodb_table" "project_sapphire_user_data" {
   }
 }
 
+Question 2: Which command would you use to show the attributes of the resource called classics stored in terraform state?
+
+Anwser: terraform state show local_file.classics, not terraform state show classics
+
+Explanation:
+
+If you were to use terraform state show classics without specifying the resource type, Terraform would interpret it as looking for a resource named "classics" across all resource types, which might not yield the desired result.
+
+Question 3: What is the value of the attribute called id that is created for the local file resource called top10?
+
+Anwser: terraform state show local_file.top10
+
+
+
 Terraform init is a command that can be run as many times as you want without any adverse effects.
 
 
