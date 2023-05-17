@@ -355,6 +355,20 @@ Can you export the debug logs from terraform just by setting TF_LOG_PATH environ
 No, because you also need to export TF_LOG and set it to one of the log levels
 
 
+We want to create an IAM user. Update the module block to only allow create_user. Disable create_iam_access_key and create_iam_user_login_profile.
+
+Solution: locate the submodule here: https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest/submodules/iam-user?tab=inputs
+notice how the create_iam_access_key argument is of type bool, so the solution is:
+
+module "iam_iam-user" {
+  source = "terraform-aws-modules/iam/aws//modules
+  version = "3.4.0"
+  name = "max" 
+  create_iam_user_login_profile = false
+  create_iam_access_key = false
+}
+  
+
 
 
  
