@@ -258,6 +258,10 @@ resource "aws_dynamodb_table" "project_sapphire_user_data" {
   }
 }
 
+Terraform state commands are used to edit the state file instead of manually editing the state file, because, when terraform state commands edit a resource, 
+that resource is mediated and controlled and tracked by terraform, which prevents broken infrastructure.
+
+
 
 
  
