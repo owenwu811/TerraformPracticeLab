@@ -264,6 +264,8 @@ Terraform init is a command that can be run as many times as you want without an
 Terraform state commands are used to edit the state file instead of manually editing the state file, because, when terraform state commands edit a resource, 
 that resource is mediated and controlled and tracked by terraform, which prevents broken infrastructure.
 
+Terraform state list gives you a high level overview of which resources exist while terraform show drills down into the arguments of each resource.
+
 
 Other common mistakes to remember:
 
