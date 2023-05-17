@@ -283,7 +283,8 @@ What is the reason for this behavior?
 
 Correct anwser - We are using remote state. Incorrect anwser - terraform apply has not been run 
 
-Explanation: ls -l reveals a terraform.tf file, and, inside that file, is a terraform block containing terraform { backend “s3” {}}
+Explanation: ls -l reveals a terraform.tf file, and, inside that file, is a terraform block containing terraform { backend “s3” {}}l REMOTE STATE IN TERRAFORM DOES NOT UTILIZE A TERRAFORM.TFSTATE FILE. Instead, the state information is stored remotely in a backend, such as Amazon S3, HashiCorp Consul, or HashiCorp Terraform Cloud. 
+The remote state backend manages the storage and retrieval of state data.
 
 
 Terraform init is a command that can be run as many times as you want without any adverse effects.
