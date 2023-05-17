@@ -270,6 +270,9 @@ Question 3: What is the value of the attribute called id that is created for the
 
 Anwser: terraform state show local_file.top10
 
+Question 4: We no longer wish to manage the file located at /root/anime/hall-of-fame.txt by Terraform. Remove the resource responsible for this file completely from the management of terraform.
+
+Answer: terraform state rm local_file.hall_of_fame
 
 
 Terraform init is a command that can be run as many times as you want without any adverse effects.
