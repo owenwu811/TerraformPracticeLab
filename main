@@ -308,6 +308,42 @@ Other common mistakes to remember:
 - Just because you mkdir dosen’t mean you are automatically in that directory you just mkdired. You still have to cd to get into that directory.
 
 
+Navigate to the directory /root/terraform-projects/project-cerberus. We have an empty main.tf file in this directory. 
+Using this configuration file write a resource block to provision a simple EC2 instance with the following specifications:
+
+
+Resource Name: cerberus
+
+AMI: ami-06178cf087598769c, use variable named ami
+
+region: eu-west-2, use variable named region
+
+Instance Type: m5.large, use variable named instance_type
+
+Once ready, run terraform init, plan and apply to provision this EC2 instance.
+
+
+Solution:
+
+variables.tf
+
+variable "ami" {
+        default = "ami-06178cf087598769c"
+}
+variable "region" {
+        default = "eu-west-2"
+}
+variable "instance_type" {
+        default = "m5.large"
+}
+
+main.tf (the aws_instance resource does not support a region argument per terraform documentation, so leave it out of the main.tf)
+
+resource "aws_instance" "cerberus" {
+        ami = var.ami
+        instance_type = var.instance_type
+}
+
 
 
  
