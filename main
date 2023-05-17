@@ -258,8 +258,16 @@ resource "aws_dynamodb_table" "project_sapphire_user_data" {
   }
 }
 
+Terraform init is a command that can be run as many times as you want without any adverse effects.
+
+
 Terraform state commands are used to edit the state file instead of manually editing the state file, because, when terraform state commands edit a resource, 
 that resource is mediated and controlled and tracked by terraform, which prevents broken infrastructure.
+
+
+Other common mistakes to remember:
+
+- Just because you mkdir dosen’t mean you are automatically in that directory you just mkdired. You still have to cd to get into that directory.
 
 
 
