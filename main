@@ -277,6 +277,15 @@ Answer: terraform state rm local_file.hall_of_fame
 Explanation: Terraform State List reveals that this hall_of_fame resource is of type local_file, so terraform state rm syntax is as follows: terraform state rm type.name
 
 
+Question 6: Within this configuration the terraform state commands are working (Try it!) but there is no terraform.tfstate file present!
+
+What is the reason for this behavior?
+
+Correct anwser - We are using remote state. Incorrect anwser - terraform apply has not been run 
+
+Explanation: ls -l reveals a terraform.tf file, and, inside that file, is a terraform block containing terraform { backend “s3” {}}
+
+
 Terraform init is a command that can be run as many times as you want without any adverse effects.
 
 
