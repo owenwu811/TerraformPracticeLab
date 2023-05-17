@@ -287,6 +287,13 @@ Explanation: ls -l reveals a terraform.tf file, and, inside that file, is a terr
 The remote state backend manages the storage and retrieval of state data.
 
 
+Question 8: Rename the resource from super_pet_1 to ultra_pet.
+Change the name in the main.tf file as well as the state.
+
+Anwser: terraform state mv random_pet.super_pet_1 random_pet.ultra_pet
+
+Explanation: use terraform state help to find terraform state mv command, and make sure to use the provider.resource full reference expression. 
+
 Terraform init is a command that can be run as many times as you want without any adverse effects.
 
 
