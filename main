@@ -344,6 +344,8 @@ resource "aws_instance" "cerberus" {
         instance_type = var.instance_type
 }
 
+Terraform show prints the resources in a human readable format 
+
 
 
  
