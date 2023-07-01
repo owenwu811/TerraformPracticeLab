@@ -347,8 +347,7 @@ resource "aws_instance" "cerberus" {
         instance_type = var.instance_type
 }
 
-Terraform show prints the resources in a human readable format 
-
+Terraform show prints the resources in a "human readable format" 
 
 Can you export the debug logs from terraform just by setting TF_LOG_PATH environment variable and providing a path as the value to this variable?
 
