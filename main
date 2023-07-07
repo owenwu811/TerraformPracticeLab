@@ -4,6 +4,7 @@ Fequently missed Q's / unsure questions -
 For me, it's easy to think of a resource in Terraform like an object in any oop language such as Python, that is, an object representing any infrastructure object, like a vm or a database, for example.
 
 which directory are terraform plugins located?
+
 .terraform/plugins
 
 To find the ID attribute for a resource, run terraform show without arguments as terraform show shows all the details of each resource
@@ -369,6 +370,4 @@ module "iam_iam-user" {
   
 
 
-
- 
  
