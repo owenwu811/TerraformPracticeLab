@@ -42,7 +42,6 @@ Dosen’t access means that depends_on was used because you still know that ther
 
 -var takes the highest precedence in terraform variable definition precedence while enviornment variables take the lowest precedence.
 
-
 The time static resource does not take any arguments to work. This is because it is used to generate a static timestamp that can be used as a value in other parts of the terraform configuration.
 Time static resource does not create or manage any infrastructure resources.
 
@@ -50,13 +49,13 @@ Where is the terraform state file stored by default:
 
 Inside of the configuration directory
 
-To find the private ip for an address, run terraform show. an argument value is not necessary.
+To find the private ip for an address, run terraform show. An argument value is not necessary.
 
-Terraform apply will show all the output values automatically without running terraform output.
+Terraform apply will show all the output values automatically without running terraform output 
 
 reference expressions must have ${} if used with subsitution, similar to python formatted strings.
 
-Create before destroy meta argument needs to be wrapped in a lifecycle block:
+Create before destroy meta argument needs to be wrapped in a lifecycle block: (reference documentation)
 
 resource "random_string" "string" {
   length = var.length
