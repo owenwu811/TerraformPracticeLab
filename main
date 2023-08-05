@@ -368,5 +368,14 @@ module "iam_iam-user" {
 }
   
 
+Indexed elements in terraform are LISTS, not MAPS
+
+What filename = var.users[count.index] means:
+
+Var.users[0] = 1st element of var.users list
+Var.users[1] = 2nd element of var.users list
+
+ Count.index represents the current index in the loop - during the 1st iteration, count.index will be 0, and filename will be set to var.users[0], which is the 1st element of the var.users list. During the 2nd iteration, count.index will be 1, and filename will be set to var.users[1], ie, the second element of the var.users list, and so on until all the elements in the var.users list are processed. 
+
 
  
