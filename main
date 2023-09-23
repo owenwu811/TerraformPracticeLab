@@ -65,7 +65,7 @@ resource "random_string" "string" {
    }
 }
 
-set(string) is a valid datatype in Terraform
+set(string) is a valid data structure in Terraform
 
 Value of output variable pet-name?
 
@@ -106,7 +106,6 @@ Use the subcommand create-group to create the group.
 aws iam create-group --group-name project-sapphire-developers --endpoint http://aws:4566 (Use aws iam help to find subcommands, and then read the synposis)
 
 
-
 Add the IAM users called jack and jill, who are developers to the new IAM Group called project-sapphire-developers.
 Use the subcommand add-user-to-group to add users into the group.
 
@@ -115,7 +114,6 @@ Use the subcommand add-user-to-group to add users into the group.
  Solution: aws iam add-user-to-group --group-name project-sapphire-developers --user-name jack  --endpoint http://aws:4566 
  
  aws iam add-user-to-group --group-name project-sapphire-developers --user-name jill  --endpoint http://aws:4566 
- 
  
 What privileges are granted for jack and jill who are part of the group project-sapphire-developers?
 
@@ -131,11 +129,10 @@ Attach the AmazonEC2FullAccess policy with the ARN: arn:aws:iam::aws:policy/Amaz
 
 aws iam attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess --endpoint http://aws:4566
 
-
 what does this error message mean: 
 configuring Terraform AWS Provider: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, failed to resolve service endpoint, an AWS region is required, but was not found
 
-Solution: the region is not set (aws region was required but not found)
+Solution: the region is not set (aws region is required but is not found)
 
 Add a new file called provider.tf containing a provider block for aws. 
 Inside this block add a single argument called region with the value ca-central-1
@@ -368,7 +365,7 @@ module "iam_iam-user" {
 }
   
 
-Indexed elements in terraform are LISTS, not MAPS
+Indexed elements in terraform are LISTS, not MAPS (think similar to Python)
 
 What filename = var.users[count.index] means:
 
