@@ -464,3 +464,10 @@ Use yaml for configuration files
 Use json when you want to share files over multiple computers, like a client and a server
 
 -----
+
+What does idemponent mean in the context of Terraform?
+
+
+The idempotent characteristic provided by IaC tools ensures that, even if the same code is applied multiple times, the result remains the same.
+
+-----
