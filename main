@@ -396,3 +396,18 @@ explanation of enviornment variable precendence in terraform: 1. -var and -var-f
 Which of the following commands is a valid way to make use of a custom variable file with the terraform apply command?
 
 Terraform apply -var-file variable.vars
+
+----
+
+Which feature is not free in Terraform cloud?
+
+Roles and Team management
+
+-----
+
+Order of declaration of variables in terraform code?
+
+
+Does not matter
+
+-----
