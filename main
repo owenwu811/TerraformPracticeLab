@@ -437,3 +437,30 @@ When running the command terraform taint against a managed resource you want to 
 False - taint marks the object as damaged, and the next apply recreates it
 
 -----
+
+can terraform init download community providers?
+
+no
+
+-----
+
+the dynamic block in terraform acts as a for loop 
+
+-----
+
+resource names in terraform are provider specific
+
+True
+
+-----
+
+why is it a good idea to ignore terraform.tfvars when committing to git repos?
+
+they contain secrets
+
+-----
+
+Use yaml for configuration files
+Use json when you want to share files over multiple computers, like a client and a server
+
+-----
