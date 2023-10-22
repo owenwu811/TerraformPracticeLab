@@ -376,3 +376,23 @@ Var.users[1] = 2nd element of var.users list
 
 terraform's advantage is that it is vendor agnostic, meaning that it can work with multiple cloud platforms compared to a tool such as cloudformation, which is AWS specific
  
+10/22/2023 (missed questions):
+
+How can we use environment variables to pass input variables into terraform scripts?
+
+TF_VARS_ <variable_name>
+
+—
+
+Which method has the highest priority in variable definition precedence?
+
+
+Command line flag of -var or -var-file
+
+explanation of enviornment variable precendence in terraform: 1. -var and -var-file options in cli in order they are provided 2.auto.tfvars or auto.tfvars.jsonfiles processed in lexical order of their filenames 3. the terraform.tfvars.json file, if present 4. the terraform.tfvars file, if present
+
+—--
+
+Which of the following commands is a valid way to make use of a custom variable file with the terraform apply command?
+
+Terraform apply -var-file variable.vars
