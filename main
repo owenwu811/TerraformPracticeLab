@@ -229,7 +229,7 @@ When there is no terraform.tfstate file, it usually means that terraform apply h
 
 
 
-If you haven't run terraform apply and try to run terraform show, it will show no state.
+If you haven't run terraform apply and try to run terraform show, it will show no state because the state file is only created once apply is run atleast once.
 
 Incorrect:
 
